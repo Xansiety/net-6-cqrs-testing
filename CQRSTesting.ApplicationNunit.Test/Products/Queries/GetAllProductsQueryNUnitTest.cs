@@ -38,6 +38,8 @@ namespace CQRSTesting.Application.Products.Queries
             // WORK WITH FAKE DATA 
             // agregar los productos al contexto de la base de datos
             ApplicationDbContextFake.Products.AddRange(productRecords);
+            // guardar los cambios en la base de datos
+            ApplicationDbContextFake.SaveChanges();
 
 
             // FAKE MAPPER - AutoMapper
@@ -54,14 +56,17 @@ namespace CQRSTesting.Application.Products.Queries
         }
 
         [Test]
-        public void GetAllProductsQueryRequest_DebeDevolverUnaListaDeProductos()
+        public async Task GetAllProductsQueryRequest_DebeDevolverUnaListaDeProductos()
         {
             // 1.- Emular al contexto que representa la base de datos - LISTO
-
             // 2.- Emular al mapper - LISTO
-
             // 3.- Instancia un objeto de la clase GetProductsQueryHandler y pasarle como parámetros los objetos context y mapper emulados
             // GetProductsQueryHandler(context, mapper) => handle - LISTO
+            GetAllProductsQuery.GetAllProductsQueryRequest request = new();
+
+            var resultados = await handlerAllProducts.Handle(request, new System.Threading.CancellationToken());
+
+            Assert.IsNotNull(resultados);
         }
     }
 }
