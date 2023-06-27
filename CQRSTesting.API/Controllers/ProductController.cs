@@ -32,6 +32,14 @@ namespace CQRSTesting.API.Controllers
             return products;
         }
 
+        [HttpGet("{id}")]
+        public async Task<ActionResult<ProductDTO>> GetProductById(Guid id)
+        {
+            //mediator lo que hace en este punto es buscar el handler que corresponde a la petición 
+            var product = await Mediator.Send(new GetProductByIdQuery.GetProductByIdQueryRequest { ProductId = id });
+            return product;
+        }
+
         [HttpPost]
         public async Task<ActionResult<Unit>> Post(CreateProductCommand.CreateProductCommandRequest request)
         {
