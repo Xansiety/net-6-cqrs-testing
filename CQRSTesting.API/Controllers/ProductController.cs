@@ -1,4 +1,5 @@
 ﻿using CQRSTesting.Application.DTOs;
+using CQRSTesting.Application.Products.Commands;
 //using CQRSTesting.Application.Products.Commands;
 using CQRSTesting.Application.Products.Queries;
 using MediatR;
@@ -31,13 +32,13 @@ namespace CQRSTesting.API.Controllers
             return products;
         }
 
-        //[HttpPost]
-        //public async Task<ActionResult<Unit>> Post(CreateProductCommand.CreateProductCommandRequest request)
-        //{
-        //    //mediator lo que hace en este punto es buscar el handler que corresponde a la petición 
-        //    var result = await _mediator.Send(request);
-        //    return result;
-        //}
+        [HttpPost]
+        public async Task<ActionResult<Unit>> Post(CreateProductCommand.CreateProductCommandRequest request)
+        {
+            //mediator lo que hace en este punto es buscar el handler que corresponde a la petición 
+            var result = await Mediator.Send(request);
+            return result;
+        }
 
     }
 }
