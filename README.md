@@ -11,3 +11,7 @@ de los proyectos `Domain` y `Persistence`.
 Por ultimo tenemos el proyecto `API`, el cual es el encargado de recibir las peticiones del cliente y enviar las respuestas,
 por lo que necesitamos indicarle al proyecto las referencias de los proyectos `Application` ya que en este proyecto se encuentran 
 las reglas de negocio y las acciones que se van a ejecutar.
+
+
+-- En persistencia se crea la carpeta Data, donde se crean las clases de contexto de la base de datos, y las clases de migración, ademas de que es en esta 
+   donde se deben de instalar los paquetes de EntityFrameworkCore y EntityFrameworkCore.SqlServer.

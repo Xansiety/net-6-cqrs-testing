@@ -16,7 +16,6 @@ namespace CQRSTesting.Domain.Entities
         [StringLength(250)]
         public string Description { get; set; } = string.Empty;
 
-
         public decimal UnitPrice { get; set; } = 0.00M;
 
         [DataType(DataType.Date)]
