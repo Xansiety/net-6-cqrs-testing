@@ -19,8 +19,4 @@
     <ProjectReference Include="..\CQRSTesting.Application\CQRSTesting.Application.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Products\Commands\" />
-  </ItemGroup>
-
 </Project>
