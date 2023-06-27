@@ -9,9 +9,8 @@ namespace CQRSTesting.Persistence.Context
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
         // Definimos las tablas de la base de datos
-        DbSet<Product> Products { get; set; }
-
-
+        public DbSet<Product> Products { get; set; }
+         
         // Configurations
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
