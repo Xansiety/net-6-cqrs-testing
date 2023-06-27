@@ -5,7 +5,7 @@ using CQRSTesting.Persistence.Context;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace CQRSTesting.Application.Products
+namespace CQRSTesting.Application.Products.Queries
 {
     public class GetAllProductsQuery
     {
