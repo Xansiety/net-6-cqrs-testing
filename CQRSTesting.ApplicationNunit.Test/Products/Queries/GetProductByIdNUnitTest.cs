@@ -4,8 +4,7 @@ using CQRSTesting.Application.Helper;
 using CQRSTesting.Domain.Entities;
 using CQRSTesting.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
-using NUnit.Framework;
-using static CQRSTesting.Application.Products.Queries.GetProductByIdQuery;
+using NUnit.Framework; 
 
 namespace CQRSTesting.Application.Products.Queries
 {
@@ -57,10 +56,10 @@ namespace CQRSTesting.Application.Products.Queries
         }
 
         [Test]
-        public async Task GetProductByIdQueryRequest_DebeDevolverUnProducto()
+        public async Task GetProductByIdQueryHandler_DebeDevolverUnProducto()
         { 
             // Arrange
-            var request = new GetProductByIdQueryRequest
+            var request = new GetProductByIdQuery.GetProductByIdQueryRequest
             {
                 ProductId = productIdGuid
             }; 
