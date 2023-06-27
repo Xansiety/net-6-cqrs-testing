@@ -15,3 +15,27 @@ las reglas de negocio y las acciones que se van a ejecutar.
 
 -- En persistencia se crea la carpeta Data, donde se crean las clases de contexto de la base de datos, y las clases de migración, ademas de que es en esta 
    donde se deben de instalar los paquetes de EntityFrameworkCore y EntityFrameworkCore.SqlServer.
+
+
+
+## Manera alternativa de generar migraciones
+
+```bash
+dotnet ef migrations add InitialCreate --project Project.Persistence -o Data/Migrations
+```
+
+Notas:
+Si la migracion se hace desde el Package Manager console, en el proyecto start(API) se debe de instalar el paquete de EntityFrameworkCore.Design
+
+```bash
+dotnet add package Microsoft.EntityFrameworkCore.Design
+```
+
+Si al hacer la migracion se nos muestra el siguiente error:
+
+```bash
+Unable to create an object of type 'ApplicationDbContext'. For the different patterns supported at design time, see https://go.microsoft.com/fwlink/?linkid=851728
+```
+
+Debemos de agregar un constructor a la clase ApplicationDbContext en blanco
+ 
